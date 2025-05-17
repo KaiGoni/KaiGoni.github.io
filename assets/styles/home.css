@@ -1,0 +1,130 @@
+html, body {
+    height:100%;
+    margin:0 auto;
+}
+
+nav {
+    margin: 8px;
+    box-shadow: 3px 3px 3px 2px #dddddd50;
+}
+
+.title-image {
+    background: linear-gradient(to bottom, transparent, transparent, #E1F3FD), url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/MTA_LIRR_train_leaving_Woodside.jpg/1200px-MTA_LIRR_train_leaving_Woodside.jpg") center;
+    background-size: cover;
+
+    /* Fix Position & Size */
+    position: absolute;
+    width: 100%;
+    height: 400px; 
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.profile-content-wrapper {
+    margin-top: 360px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.picture {
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border-radius: 20%;
+    margin: 20px;
+    object-fit: cover;
+}
+
+div.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 20px; */
+}
+
+div.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0px;
+}
+
+.featured-projects {
+    background-color: #202040;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.project-list {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin:0px;
+}
+
+.project {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.profile-description {
+    width: 600px;
+}
+
+.profile-name {
+    font-size: 60px;
+    margin: 0px;
+}
+
+.project-image {
+    width: 400px;
+    height: 300px;
+    border: #707599 4px solid;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1000px) {
+    .profile-content-wrapper {
+        flex-direction: column;
+        width: 90%;
+    }
+    
+    .profile-content {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .picture {
+        width: 80%;
+        height: 80%;
+    }
+    
+    .profile-name {
+        font-size: 42px;
+    }
+
+    .profile-description {
+        font-size: 24px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .project-image {
+        width: 98%;
+        height: auto;
+    }
+}

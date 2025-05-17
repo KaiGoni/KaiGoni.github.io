@@ -1,0 +1,57 @@
+.profile-pic {
+  display: block;
+  width: 400px;
+  height: 400px;
+  border-radius: 20%;
+  margin: 0 20px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.bio {
+  margin: 20px 20px;
+  font-size: 24px;
+  padding: 20px;
+  background-color: lightsteelblue;
+  border-radius: 20px;
+}
+
+.header {
+  font-size: 60px;
+  margin: 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+  .content {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .bio {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile-pic {
+    width: 90%;
+    height: auto;
+  }
+  
+  .header {
+    font-size: 36px;
+  }
+
+  .bio {
+    font-size: 18px;
+  }
+}
