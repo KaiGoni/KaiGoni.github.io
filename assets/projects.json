@@ -1,44 +1,84 @@
-[
-  {
-    "id": "compound-machine",
-    "title": "Compound Machine",
-    "description": "Students learn about simple machines and mechanical advantages, and utilize them to create complex machines.",
-    "tags": [
-      "engineering",
-      "bayside_high_school"
-    ],
-    "thumbnail": "https://arielsweet.weebly.com/uploads/4/0/3/7/40378585/933135_orig.jpg"
-  },
-  {
-    "id": "physical-computing",
-    "title": "Physical Computing",
-    "description": "Students learn how to create electrical circuits and program the Arduino Uno to perform various tasks.",
-    "tags": [
-      "circuits",
-      "engineering",
-      "bayside_high_school"
-    ],
-    "thumbnail": ""
-  },
-  {
-    "id": "wind-turbine",
-    "title": "Wind Turbine",
-    "description": "",
-    "tags": [
-      "green_energy",
-      "engineering",
-      "bayside_high_school"
-    ],
-    "thumbnail": ""
-  },
-  {
-    "id": "autocad-environmental-science-lab",
-    "title": "AutoCAD Environmental Science Lab",
-    "description": "",
-    "tags": [
-      "engineering",
-      "bayside_high_school"
-    ],
-    "thumbnail": ""
-  }
-]
+{
+  "tags": [
+    {
+      "tag": "ongoing",
+      "name": "Ongoing"
+    },
+    {
+      "tag": "complete",
+      "name": "Complete"
+    },
+    {
+      "tag": "circuits",
+      "name": "Circuits"
+    },
+    {
+      "tag": "cad_design",
+      "name": "CAD Design"
+    },
+    {
+      "tag": "green_energy",
+      "name": "Green Energy"
+    }
+  ],
+  "projects": [
+    {
+      "id": "compound-machine",
+      "title": "Compound Machine",
+      "description": "Students learn about simple machines and mechanical advantages, and utilize them to create complex machines.",
+      "tags": [
+        "complete"
+      ],
+      "thumbnail": "https://arielsweet.weebly.com/uploads/4/0/3/7/40378585/933135_orig.jpg"
+    },
+    {
+      "id": "physical-computing",
+      "title": "Physical Computing",
+      "description": "Students learn how to create electrical circuits and program the Arduino Uno to perform various tasks.",
+      "tags": [
+        "ongoing",
+        "circuits"
+      ],
+      "thumbnail": ""
+    },
+    {
+      "id": "wind-turbine",
+      "title": "Wind Turbine",
+      "description": "",
+      "tags": [
+        "complete",
+        "green_energy"
+      ],
+      "thumbnail": ""
+    },
+    {
+      "id": "autocad-environmental-science-lab",
+      "title": "AutoCAD Environmental Science Lab",
+      "description": "",
+      "tags": [
+        "complete",
+        "cad_design"
+      ],
+      "thumbnail": ""
+    },
+    {
+      "id": "onshape-train-model",
+      "title": "OnShape Train Model",
+      "description": "",
+      "tags": [
+        "complete",
+        "cad_design"
+      ],
+      "thumbnail": ""
+    },
+    {
+      "id": "mahjong-bot",
+      "title": "Mahjong Bot",
+      "description": "",
+      "tags": [
+        "ongoing"
+      ],
+      "thumbnail": ""
+    }
+  ]
+}

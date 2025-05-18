@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" href="../assets/styles/main.css">
     <link rel="stylesheet" href="../assets/styles/project-list.css">
-    <script src="../assets/scripts/projects.js"></script>
+    <script type="module" src="../assets/scripts/projects.js"></script>
 </head>
 <body>
     <nav>
@@ -22,42 +22,15 @@
     </div>
 
     <div class="content">
-        <!-- <div class="filters">
+        <div class="filters">
             <span style="font-size: 24px;"><b>Filters</b></span>
             <div class="divider"></div>
 
             <p  style="font-size: 18px; margin: 0px;"><b>Topic</b></p>
             <div style="height: 2px; background-color: #e1f3fd; margin: 2px 0;"></div>
-            <div>
-                <input type="checkbox" id="topic-engineering" onchange="filter()">
-                <label for="topic-engineering">Engineering</label><br>
-                <input type="checkbox" id="topic-computer-science" onchange="filter()">
-                <label for="topic-computer-science">Computer Science</label><br>
-            </div>
-        </div> -->
-
-        <div id="project-list">
-<!--            <a class="project" data-topics="engineering" href="compound-machines.html">-->
-<!--                <img src="https://arielsweet.weebly.com/uploads/4/0/3/7/40378585/933135_orig.jpg" alt="Compound Machines">-->
-<!--                <h2>Compound Machines</h2>-->
-<!--                <p>Students learn about simple machines and mechanical advantages, and utilize them to create complex machines.</p>-->
-<!--            </a>-->
-<!--            <a class="project" data-topics="engineering" href="physical-computing.html">-->
-<!--                <img src="" alt="Physical Computing">-->
-<!--                <h2>Physical Computing</h2>-->
-<!--                <p>Students learn how to create electrical circuits and program the Arduino Uno to perform various tasks</p>-->
-<!--            </a>-->
-<!--            <a class="project" data-topics="engineering" href="wind-turbine.html">-->
-<!--                <img src="" alt="Wind Turbine">-->
-<!--                <h2>Wind Turbine</h2>-->
-<!--                <p>Students learn how to create electrical circuits and program the Arduino Uno to perform various tasks</p>-->
-<!--            </a>-->
-<!--            <a class="project" data-topics="engineering" href="autocad-environmental-science-lab-room.html">-->
-<!--                <img src="" alt="AutoCAD Environmental Science Lab Room">-->
-<!--                <h2>AutoCAD Environmental Science Lab Room</h2>-->
-<!--                <p>Students learn how to create electrical circuits and program the Arduino Uno to perform various tasks</p>-->
-<!--            </a>-->
+            <div id="filter-topics"></div>
         </div>
+        <div id="project-list"></div>
     </div>
 </body>
 </html>
