@@ -20,7 +20,7 @@ function update() {
     for (const project of projects.projects.filter(filter)) {
         const element = $$("div.project", {
                 listeners: {
-                    click: () => window.location.href = `${project.id}.html`
+                    click: () => window.location.href = project.id
                 }
             },
             $$("img", {src: project.thumbnail}),

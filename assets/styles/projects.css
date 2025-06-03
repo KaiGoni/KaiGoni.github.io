@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
     margin:10px;
     font-size: 18px;
     text-indent: 40px;
@@ -13,4 +12,23 @@
     height: 300px;
     border-radius: 10px;
     object-fit: cover;
+}
+
+.section {
+    margin: 20px;
+}
+
+.passage {
+    margin: 10px;
+    line-height: 2;
+}
+
+.date {
+    font-size: 14px;
+    text-align: right;
+}
+
+.body-image {
+    width: 100%;
+    height: auto;
 }
