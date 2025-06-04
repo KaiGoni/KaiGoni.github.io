@@ -30,7 +30,7 @@
         "complete",
         "environmental"
       ],
-      "thumbnail": ""
+      "thumbnail": "../projects/smart-irrigation-system/assets/final-sketch.png"
     },
     {
       "id": "physical-computing",
@@ -53,8 +53,8 @@
       "thumbnail": ""
     },
     {
-      "id": "compound-machine",
-      "title": "Compound Machine",
+      "id": "compound-machines",
+      "title": "Compound Machines",
       "description": "Students learn about simple machines and mechanical advantages, and utilize them to create complex machines.",
       "tags": [
         "complete"
