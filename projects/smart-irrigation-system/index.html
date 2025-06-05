@@ -6,12 +6,15 @@
     <title>Smart Irrigation System</title>
     <link rel="stylesheet" href="../../assets/styles/main.css">
     <link rel="stylesheet" href="../../assets/styles/projects.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script src="../../assets/scripts/main.js"></script>
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="../.." class="link">Home</a></li>
-            <li><a href=".." class="link">Projects</a></li>
+            <li><a href=".." class="selected link" >Projects</a></li>
             <li><a href="../../about" class="link">About Me</a></li>
         </ul>
     </nav>
@@ -23,13 +26,15 @@
         <div class="section">
             <h2 style="text-indent: 0;">Project Overview</h2>
             <p class="passage">Our mission in this project is to create a smart irrigation system that can potentially
-                save water from overwatering and prevent plants from dying from underwatering. Additionally, we will
-                utilize Wi-Fi for a wireless communication between the sensor and the actuators, as well as for a
+                save water from overwatering and prevent plants from dying from the lack of water. Additionally, we
+                will use Wi-Fi for a wireless communication between the sensor and the actuators, as well as for a
                 connection to devices such as a phone for viewing sensor information and other control over the pump
                 actuators.</p>
-            <p class="passage">The purpose of this project is to learn how to utilize microcontrollers and interact
-                with sensors and actuators to perform tasks in the real world. Several new components will be used,
+            <p class="passage">The purpose of this project is to learn how to use microcontrollers and interact with
+                sensors and actuators to perform tasks in the real world. Several new components will be used,
                 including sensors, actuators, resistors, and transistors to protect the microcontroller.</p>
+            <p class="passage">This is a group project in the Bayside High School's Engineering Design & Development
+                course consisting of me, Alaina Giova, Juliana Sicilian, and Rebecca Solomon.</p>
         </div>
         <div class="section">
             <h2 style="text-indent: 0;">Design & Development Process</h2>
@@ -57,23 +62,170 @@
                 <img src="assets/circuit-diagram.png" alt="Logic diagram">
                 <p>Circuit logic diagram of the system</p>
             </div>
-            <p class="passage">Our logic was extremely simple. After the readings are transferred to the Pico W, the
-                code checks for each sensor for whether the moisture is above the threshold, which is provided by the
-                user upon startup, and if it is, the valves will open.</p>
+            <p class="passage">However, the biggest oversight in our system was that bluetooth was not possible, since
+                we have an HC-05 Bluetooth Module running a Class 2 Bluetooth system, while the Pico W runs on BLE or
+                Bluetooth 5.2, making them incompatible with each other. Unfortunately, due to time constraints and
+                increasing complexity, we ended up cutting out wireless connectivity entirely and only used an Arduino
+                Uno with wired connections.</p>
+            <p class="passage">We also ended up switching from valves to pumps because our first valve was for
+                pneumatics instead of water. We also had the benefit where the pump doesn't need to rely on gravity,
+                which made our tank easier to build. Additionally, due to a lack of materials, we used one large soil
+                container rather than multiple smaller ones.
+            </p>
+            <p class="passage">
+                Our code functions by initializing the sensors and actuators, getting user inputs for the moisture
+                threshold, and then reading moisture levels every few seconds. Using the readings, it checks if the
+                moisture is above the threshold, and if it is, it opens the pump.
+            </p>
+            <div class="code-container">
+                <p>IrrigationCode.ino</p>
+            <pre><code>#define MOISTURE_SENSOR_1 A0
+#define MOISTURE_SENSOR_2 A1
+#define PUMP_1_PIN 8
+#define PUMP_2_PIN 7
+
+// Moisture Values
+int moisture1 = 0;
+int moisture2 = 0;
+// Thresholds
+int level1 = -1;
+int level2 = -1;
+// Inital Initialization completion
+
+void setup() {
+  // Initialize serial communications
+  Serial.begin(9600);
+
+  // Set pump pins as outputs
+  pinMode(PUMP_1_PIN, OUTPUT);
+  pinMode(PUMP_2_PIN, OUTPUT);
+
+  // Initially turn off both pumps
+  digitalWrite(PUMP_1_PIN, LOW);
+  digitalWrite(PUMP_2_PIN, LOW);
+
+  // Welcome message and instructions
+  Serial.println("Moisture Control System");
+  Serial.println("Please enter threshold values");
+  Serial.println("Format: level1,level2");
+  Serial.println("Example: 500,450");
+}
+
+void loop() {
+  // Wait until thresholds are obtained
+  if (level1 == -1) {
+    getThresholdLevels();
+    return;
+  }
+
+  // Read moisture values from sensors
+  moisture1 = analogRead(MOISTURE_SENSOR_1);
+  moisture2 = analogRead(MOISTURE_SENSOR_2);
+
+  Serial.print("Current moisture values - Sensor 1: ");
+  Serial.print(moisture1);
+  Serial.print(", Sensor 2: ");
+  Serial.println(moisture2);
+
+  controlPumps();
+  delay(2000);
+}
+
+void getThresholdLevels() {
+  if (Serial.available() > 0) {
+    String data = Serial.readStringUntil('\n');
+
+    // Parse threshold input (format: "level1,level2")
+    int commaIndex = data.indexOf(',');
+    if (commaIndex != -1) {
+      level1 = data.substring(0, commaIndex).toInt();
+      level2 = data.substring(commaIndex + 1).toInt();
+
+      Serial.print("Threshold values set - Level 1: ");
+      Serial.print(level1);
+      Serial.print(", Level 2: ");
+      Serial.println(level2);
+
+      Serial.println("Setup complete. System is now monitoring moisture levels.");
+    } else {
+      Serial.println("Invalid format. Please enter as level1,level2");
+    }
+  }
+}
+
+void controlPumps() {
+  // Control pump for sensor 1 (on pin 8)
+  if (moisture1 < level1) {
+    digitalWrite(PUMP_1_PIN, HIGH); // Turn on pump 1
+    Serial.println("Pump 1 ON - Moisture level below threshold");
+  } else {
+    digitalWrite(PUMP_1_PIN, LOW); // Turn off pump 1
+    Serial.println("Pump 1 OFF - Moisture level above threshold");
+  }
+
+  // Control pump for sensor 2 (on pin 7)
+  if (moisture2 < level2) {
+    digitalWrite(PUMP_2_PIN, HIGH); // Turn on pump 2
+    Serial.println("Pump 2 ON - Moisture level below threshold");
+  } else {
+    digitalWrite(PUMP_2_PIN, LOW); // Turn off pump 2
+    Serial.println("Pump 2 OFF - Moisture level above threshold");
+  }
+}</code></pre></div>
+            <p class="passage">
+                The wiring had some complexity, due to voltage and current limitations. The Arduino Uno's digital pins
+                could only supply 40 amps of current, while the pumps needed 100 amps to function. To increase the
+                current, we used a transistor connected to the power supply and protected it with a 1k resistor.
+            </p>
+            <div class="body-image">
+                <img src="assets/final-circuit.png" alt="Final Circuit">
+                <p>Final circuit of the system</p>
+            </div>
+            <p class="passage">
+                The pipes were made out of a 1/4" plastic, with several holes drilled in the middle to allow water to
+                flow through. The pipes are connected to the pumps in the tank, which are controlled by the Arduino
+                Uno.
+            </p>
+            <div class="body-image">
+                <img src="assets/pipes.png" alt="Pipes">
+                <p>Pipes with holes to distribute water</p>
+            </div>
         </div>
         <div class="section">
             <h2 style="text-indent: 0;">Analysis</h2>
-            <p class="passage"></p>
+            <p class="passage">
+                The system is functional in the end and is able to successfully water the plants if there is not
+                enough water. The sensor regularly checks the moisture levels of the soil, and if the moisture levels
+                are below the threshold, the pumps will open.
+            </p>
+            <p class="passage">
+                However, there were still some issues. The most notable was that the water didn't truly distribute
+                evenly through the pipes. This was due to the fact that the pressure of the water was not consistent,
+                which led to most water pooling near the front of the pipes. We also had somewhat unstable wires, since
+                the transistors and resistors had worrying signs that they could short circuit.
+            </p>
+            <div class="body-image">
+                <img src="assets/system.png" alt="Final System">
+                <p>Final System of the prototype</p>
+            </div>
         </div>
         <div class="section">
             <h2 style="text-indent: 0;">Conclusion</h2>
-            <p class="passage"></p>
-        </div>
-        <div class="section">
-            <h2 style="text-indent: 0;">References</h2>
-            <p class="passage"></p>
+            <p class="passage">
+                Overall, we learned a lot from this project. We learned how to have microcontrollers interact with each
+                other as well as sensors and actuators to perform tasks in the real world. We also learned how to
+                safely wire connections, especially since we are dealing with voltage and current limitations. We also
+                learned the basis of communication between microcontrollers.
+            </p>
+            <p class="passage">
+                However, we also had many issues with our system. We overestimated the time it would take to program
+                the communication between the arduino and the Raspberry Pi, and bought products with the incorrect
+                specifications several times, leading us to cut out wireless communication entirely. We also did not
+                expect the complexity of the system caused by voltage and current limitations, and had to make several
+                amendments to the circuit, which took up a lot more time.
+            </p>
         </div>
     </div>
-    <p class="date">6-3-2025</p>
+    <p class="date">6-4-2025</p>
 </body>
 </html>

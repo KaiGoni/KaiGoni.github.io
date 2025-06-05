@@ -21,12 +21,15 @@
     </div>
     <div class="content">
         <div class="section">
-            <h2 style="text-indent: 0;">Project Overview</h2>
+            <h2 style="text-indent: 0;">Objective</h2>
             <p class="passage">----------------BODY--------------------</p>
             <div class="body-image">
                 <img src="--------------BODY_IMAGE--------------" alt="--------------IMAGE_ALT--------------">
                 <p>------------------CAPTION--------------------</p>
             </div>
+            <div class="code-container">
+                <p>--------------------------CODE_TITLE-----------------------</p>
+                <pre><code>----------------------------CODE------------------------------</code></pre></div>
         </div>
         <div class="section">
             <h2 style="text-indent: 0;">Design & Development Process</h2>

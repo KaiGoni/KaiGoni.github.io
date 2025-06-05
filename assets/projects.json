@@ -40,7 +40,7 @@
         "ongoing",
         "circuits"
       ],
-      "thumbnail": ""
+      "thumbnail": "../projects/physical-computing/assets/simon-physical-computing.jpg"
     },
     {
       "id": "wind-turbine",
@@ -50,7 +50,7 @@
         "complete",
         "environmental"
       ],
-      "thumbnail": ""
+      "thumbnail": "../projects/wind-turbine/assets/wind-turbine.jpg"
     },
     {
       "id": "compound-machines",
