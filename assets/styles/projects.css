@@ -64,8 +64,7 @@ h3 {
 }
 
 .body-image p {
-    margin: 0;
-    margin-bottom: 5px;
+    margin: 0 0 5px;
     text-align: center;
     text-indent: 0;
 }

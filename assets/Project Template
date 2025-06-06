@@ -51,6 +51,7 @@
             <p class="passage">----------------BODY--------------------</p>
         </div>
         <div class="section references">
+            <hr>
             <h2 style="text-indent: 0;">References</h2>
             <a>---------REF_NAME----------: </a><a href="--------------REF_URL---------------">--------------REF_URL---------------</a>
         </div>
