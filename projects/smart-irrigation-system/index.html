@@ -25,52 +25,65 @@
     <div class="content">
         <div class="section">
             <h2 style="text-indent: 0;">Project Overview</h2>
-            <p class="passage">Our mission in this project is to create a smart irrigation system that can potentially
-                save water from overwatering and prevent plants from dying from the lack of water. Additionally, we
-                will use Wi-Fi for a wireless communication between the sensor and the actuators, as well as for a
-                connection to devices such as a phone for viewing sensor information and other control over the pump
-                actuators.</p>
-            <p class="passage">The purpose of this project is to learn how to use microcontrollers and interact with
-                sensors and actuators to perform tasks in the real world. Several new components will be used,
-                including sensors, actuators, resistors, and transistors to protect the microcontroller.</p>
-            <p class="passage">This is a group project in the Bayside High School's Engineering Design & Development
-                course consisting of me, Alaina Giova, Juliana Sicilian, and Rebecca Solomon.</p>
+            <p class="passage">
+                Our mission in this project is to create a smart irrigation system that can potentially save water from
+                overwatering and prevent plants from dying from the lack of water. Additionally, we will use Wi-Fi for
+                a wireless communication between the sensor and the actuators, as well as for a connection to devices
+                such as a phone for viewing sensor information and other control over the pump actuators.
+            </p>
+            <p class="passage">
+                The purpose of this project is to learn how to use microcontrollers and interact with sensors and
+                actuators to perform tasks in the real world. Several new components will be used, including sensors,
+                actuators, resistors, and transistors to protect the microcontroller.
+            </p>
+            <p class="passage">
+                This is a group project in the Bayside High School's Engineering Design & Development course consisting
+                of me, Alaina Giova, Juliana Sicilian, and Rebecca Solomon.
+            </p>
         </div>
         <div class="section">
             <h2 style="text-indent: 0;">Design & Development Process</h2>
-            <p class="passage">Our initial prototype was some soil in multiple makeshift plant pots, with a sensor and
-                Raspberry Pi in each of the pots. On the tank, the Arduino will be connected to multiple valves to
-                allow water into the soil through underground pipes and gravity to water the plants. The Raspberry Pis
-                will transmit information via bluetooth to the Arduino, which will be using a transciever to recieve
-                the data.</p>
+            <p class="passage">
+                Our initial prototype was some soil in multiple makeshift plant pots, with a sensor and Raspberry Pi in
+                each of the pots. On the tank, the Arduino will be connected to multiple valves to allow water into the
+                soil through underground pipes and gravity to water the plants. The Raspberry Pis will transmit
+                information via bluetooth to the Arduino, which will be using a transceiver to receive the data.
+            </p>
             <div class="body-image">
                 <img src="assets/initial-design.png" alt="Initial design">
                 <p>Initial design of the prototype</p>
             </div>
-            <p class="passage">We planned the sensor microcontrollers to read the sensor values and transmit the
-                information, and have the actuator microcontroller to analyze the values and decide whether to open or
-                close the valve. However, we decided to use the Arduino Pro Mini for the sensors and the Raspberry Pi
-                Pico W for the actuator brain, due to improved efficiency and size.</p>
+            <p class="passage">
+                We planned the sensor microcontrollers to read the sensor values and transmit the information, and have
+                the actuator microcontroller to analyze the values and decide whether to open or close the valve.
+                However, we decided to use the Arduino Pro Mini for the sensors and the Raspberry Pi Pico W for the
+                actuator brain, due to improved efficiency and size.
+            </p>
             <div class="body-image">
                 <img src="assets/initial-wiring-diagram.png" alt="Initial wiring diagram">
                 <p>Initial wiring diagram</p>
             </div>
-            <p class="passage">Our logic was extremely simple. After the readings are transferred to the Pico W, the
-                code checks for each sensor for whether the moisture is above the threshold, which is provided by the
-                user upon startup, and if it is, the valves will open.</p>
+            <p class="passage">
+                Our logic was extremely simple. After the readings are transferred to the Pico W, the code checks for
+                each sensor for whether the moisture is above the threshold, which is provided by the user upon
+                startup, and if it is, the valves will open.
+            </p>
             <div class="body-image">
                 <img src="assets/circuit-diagram.png" alt="Logic diagram">
                 <p>Circuit logic diagram of the system</p>
             </div>
-            <p class="passage">However, the biggest oversight in our system was that bluetooth was not possible, since
-                we have an HC-05 Bluetooth Module running a Class 2 Bluetooth system, while the Pico W runs on BLE or
-                Bluetooth 5.2, making them incompatible with each other. Unfortunately, due to time constraints and
-                increasing complexity, we ended up cutting out wireless connectivity entirely and only used an Arduino
-                Uno with wired connections.</p>
-            <p class="passage">We also ended up switching from valves to pumps because our first valve was for
-                pneumatics instead of water. We also had the benefit where the pump doesn't need to rely on gravity,
-                which made our tank easier to build. Additionally, due to a lack of materials, we used one large soil
-                container rather than multiple smaller ones.
+            <p class="passage">
+                However, the biggest oversight in our system was that bluetooth was not possible, since we have an
+                HC-05 Bluetooth Module running a Class 2 Bluetooth system, while the Pico W runs on BLE or Bluetooth
+                5.2, making them incompatible with each other. Unfortunately, due to time constraints and increasing
+                complexity, we ended up cutting out wireless connectivity entirely and only used an Arduino Uno with
+                wired connections.
+            </p>
+            <p class="passage">
+                We also ended up switching from valves to pumps because our first valve was for pneumatics instead of
+                water. We also had the benefit where the pump doesn't need to rely on gravity, which made our tank
+                easier to build. Additionally, due to a lack of materials, we used one large soil container rather than
+                multiple smaller ones.
             </p>
             <p class="passage">
                 Our code functions by initializing the sensors and actuators, getting user inputs for the moisture

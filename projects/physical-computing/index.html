@@ -6,12 +6,15 @@
     <title>Physical Computing</title>
     <link rel="stylesheet" href="../../assets/styles/main.css">
     <link rel="stylesheet" href="../../assets/styles/projects.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+    <script src="../../assets/scripts/main.js"></script>
 </head>
 <body>
 <nav>
     <ul>
         <li><a href="../.." class="link">Home</a></li>
-        <li><a href=".." class="selected link" >Projects</a></li>
+        <li><a href=".." class="link">Projects</a></li>
         <li><a href="../../about" class="link">About Me</a></li>
     </ul>
 </nav>
@@ -22,38 +25,99 @@
 <div class="content">
     <div class="section">
         <h2 style="text-indent: 0;">Objective</h2>
-        <p class="passage">The purpose of this project is to learn and practice using an Arduino Uno to create
-            programs to achieve visual and audio outputs based on autonomous code or user inputs. This is a project for
-            the Engineering Development and Design course at Bayside High School.
+        <p class="passage">
+            The purpose of this project is to learn and practice using an Arduino Uno to create programs to achieve
+            visual and audio outputs based on autonomous code or user inputs. We will later utilize the skills gained
+            to create a game of Simon using the Arduino UNO. This is a project for the Engineering Development and
+            Design course at Bayside High School.
         </p>
-        <p class="passage">In this set of projects, we will learn how to control digital pins to control LEDs. We will
-            also
+    </div>
+    <div class="section">
+        <h2 style="text-indent: 0;">Activity</h2>
+        <h3>Code 1</h3>
+        <p class="passage">
+            The goal is to create a wave function, LEDs turn on and off in an order. Then, all the LEDs turn on in a
+            wave, then off in a wave for a visually appealing effect.
         </p>
-        <div class="body-image">
-            <img src="--------------BODY_IMAGE--------------" alt="--------------IMAGE_ALT--------------">
-            <p>------------------CAPTION--------------------</p>
-        </div>
         <div class="code-container">
-            <p>--------------------------CODE_TITLE-----------------------</p>
-            <pre><code>----------------------------CODE------------------------------</code></pre></div>
-    </div>
-    <div class="section">
-        <h2 style="text-indent: 0;">Design & Development Process</h2>
-        <p class="passage">----------------BODY--------------------</p>
-    </div>
-    <div class="section">
-        <h2 style="text-indent: 0;">Analysis</h2>
-        <p class="passage">----------------BODY--------------------</p>
+            <p>Code 1</p>
+            <pre><code>void setup() {
+  Serial.begin(9600);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+}
+
+void loop() {
+  for(int i = 0; i < 25; i++) {
+    Serial.print((i%5) + 2);
+    digitalWrite(i % 5 == 0 ? 6 : (i%5) + 1, LOW);
+    digitalWrite((i%5) + 2, HIGH);
+    delay(250);
+  }
+  for(int x = 0; x < 5; x++) {
+    for(int i = 2; i < 7; i++) {
+      digitalWrite(i, HIGH);
+    }
+    delay(500);
+    for(int i = 2; i < 7; i++) {
+      digitalWrite(i, LOW);
+    }
+    delay(500);
+  }
+}</code></pre></div>
+        <div class="body-image">
+            <img src="assets/code-1-circuit.png" alt="Code 1 Circuit">
+            <p>Circuit for Code 1</p>
+        </div>
+        <h3>Code 2</h3>
+        <p class="passage">
+            The LEDs will slowly turn on from left to right, then slowly turn off from right to left.
+        </p>
+        <div class="code-container">
+            <p>Code 2</p>
+            <pre><code>int leds[5] = {3, 5, 6, 9, 10};
+int i = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+  for(int led : leds) {
+  	pinMode(led, OUTPUT);
+  }
+}
+
+void changeState(String state, int pin) {
+  for(int i = 0; i <= 255; i = i + 5) {
+    int val = state == "HIGH" ? i : -(i - 255);
+    Serial.print(val);
+    Serial.print(" ");
+    analogWrite(leds[pin], val);
+  }
+}
+
+void loop() {
+  for(i = 0; i <= 4; i++) {
+    changeState("HIGH", i);
+  }
+  for(i = 4; i >= 0; i--) {
+    changeState("LOW", i);
+  }
+}</code></pre></div>
+        <div class="body-image">
+            <img src="assets/code-2-circuit.png" alt="Code 2 Circuit">
+            <p>Circuit for Code 2</p>
+        </div>
     </div>
     <div class="section">
         <h2 style="text-indent: 0;">Conclusion</h2>
-        <p class="passage">----------------BODY--------------------</p>
-    </div>
-    <div class="section">
-        <h2 style="text-indent: 0;">References</h2>
-        <p class="passage">----------------BODY--------------------</p>
+        <p class="passage">In conclusion, we learned how to utilize the Arduino Uno pins, including digital and analog
+            input and output pins. We learned how to use different components such as LEDs, piezo, and the LCD display.
+            We created various visual and sensor-based circuits, as well as a more complex Simon game in the end.</p>
     </div>
 </div>
-<p class="date">--------------------DATE------------------</p>
+<p class="date">2024-Q4 (Page Created 6-5-2025)</p>
 </body>
 </html>

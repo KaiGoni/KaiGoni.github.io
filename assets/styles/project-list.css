@@ -43,7 +43,7 @@ div.divider {
 }
 
 .project:hover {
-    background-color: aliceblue;
+    background-color: #ddeeff;
     transition: all 0.2s ease-in-out;
 }
 
