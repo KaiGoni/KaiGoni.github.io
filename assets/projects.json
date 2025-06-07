@@ -51,6 +51,15 @@
         "environmental"
       ],
       "thumbnail": "../projects/wind-turbine/assets/wind-turbine.jpg"
+    },
+    {
+      "id": "compound-machines",
+      "title": "Compound Machines",
+      "description": "Students learn about simple machines and mechanical advantages, and utilize them to create complex machines.",
+      "tags": [
+        "complete"
+      ],
+      "thumbnail": "../projects/compound-machines/assets/compound-machines.jpg"
     }
   ]
 }

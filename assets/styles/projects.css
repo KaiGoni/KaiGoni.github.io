@@ -21,15 +21,19 @@
     align-self: center;
 }
 
-.passage {
-    margin: 10px;
-    line-height: 2;
-    text-indent: 40px;
+.section h2 {
+    text-indent: 0;
 }
 
 h3 {
     margin-bottom: 0;
     text-indent: 20px;
+}
+
+.passage {
+    margin: 10px;
+    line-height: 2;
+    text-indent: 40px;
 }
 
 .references a {
