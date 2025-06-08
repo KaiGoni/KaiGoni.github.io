@@ -1,5 +1,7 @@
 import {$$} from "./lib/elements.js";
-import projects from "../projects.json" with {type: "json"};
+import projects from "./project-list.js";
+
+console.log(projects);
 
 const projectList = document.getElementById("project-list");
 const filterTagList = document.getElementById("filter-topics");
@@ -32,7 +34,6 @@ function update() {
 }
 
 function updateFilterList() {
-    // <input type="checkbox" data-tag="engineering" id="topic-engineering"/><label for="topic-engineering">Engineering</label>
     filterTagList.innerHTML = "";
     for (const tag of projects.tags) {
         const checkbox = $$("input", {
