@@ -16,16 +16,36 @@ let filter = (project) => {
     );
 };
 
-function update() {
+async function getThumbnailUrl(projectId) {
+  // Try PNG first, fall back to JPG
+    const extensions = ["png", "jpg"];
+
+    for (const ext of extensions) {
+        const url = `../assets/images/thumbnails/${projectId}.${ext}`;
+        try {
+            const response = await fetch(url, { method: "HEAD" });
+            if (response.ok) return url;
+        } catch (e) {
+            // File doesn't exist, try next extension
+        }
+    }
+
+    // Fallback if neither exists
+    console.warn(`No thumbnail found for project: ${projectId}`);
+    return `../../assets/images/thumbnails/${projectId}.png`;
+}
+
+async function update() {
     projectList.innerHTML = "";
 
     for (const project of projects.projects.filter(filter)) {
+        const thumbnailUrl = await getThumbnailUrl(project.id);
         const element = $$("div.project", {
                 listeners: {
                     click: () => window.location.href = project.id
                 }
             },
-            $$("img", {src: project.thumbnail}),
+            $$("img", {src: thumbnailUrl}),
             $$("h2", project.title),
             $$("p", project.description)
         );

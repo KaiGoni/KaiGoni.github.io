@@ -1,25 +1,10 @@
 export default {
   tags: [
-    {
-      tag: "ongoing",
-      name: "Ongoing"
-    },
-    {
-      tag: "complete",
-      name: "Complete"
-    },
-    {
-      tag: "circuits",
-      name: "Circuits"
-    },
-    {
-      tag: "cad_design",
-      name: "CAD Design"
-    },
-    {
-      tag: "environmental",
-      name: "Environmental"
-    }
+    { tag: "ongoing",         name: "Ongoing"},
+    { tag: "complete",        name: "Complete"},
+    { tag: "circuits",        name: "Circuits"},
+    { tag: "cad_design",      name: "CAD Design"},
+    { tag: "environmental",   name: "Environmental"}
   ],
   projects: [
     {
@@ -31,7 +16,6 @@ export default {
         "environmental",
         "circuits"
       ],
-      thumbnail: "../projects/smart-irrigation-system/assets/final-sketch.png"
     },
     {
       id: "physical-computing",
@@ -41,7 +25,6 @@ export default {
         "complete",
         "circuits"
       ],
-      thumbnail: "../projects/physical-computing/assets/simon-physical-computing.jpg"
     },
     {
       id: "wind-turbine",
@@ -51,7 +34,6 @@ export default {
         "complete",
         "environmental"
       ],
-      thumbnail: "../projects/wind-turbine/assets/wind-turbine.jpg"
     },
     {
       id: "compound-machines",
@@ -60,8 +42,17 @@ export default {
       tags: [
         "complete"
       ],
-      thumbnail: "../projects/compound-machines/assets/compound-machines.jpg"
     },
+    {
+      id: "autocad-environmental-science-lab",
+      title: "AutoCAD Environmental Science Lab",
+      description: "Students create a design for a new environmental science lab for Bayside High School.",
+      tags: [
+        "complete",
+        "cad_design",
+        "environmental"
+      ],
+    }
     // {
     //   id: "mahjong-bot",
     //   title: "Mahjong Bot",
@@ -72,24 +63,31 @@ export default {
     //   thumbnail: ""
     // },
     // {
-    //   id: "autocad-environmental-science-lab",
-    //   title: "AutoCAD Environmental Science Lab",
-    //   description: "Students create a design for a new environmental science lab for Bayside High School.",
+    //   id: "onshape-train",
+    //   title: "OnShape Train",
+    //   description: "A text-based Discord chatbot to run the Chinese game Mahjong.",
     //   tags: [
-    //     "complete",
-    //     "cad_design"
+    //     "ongoing"
     //   ],
     //   thumbnail: ""
     // },
     // {
-    //   id: "onshape-train-model",
-    //   title: "OnShape Train Model",
-    //   description: "Students get an introduction to OnShape by creating a train model from scratch using several different tools.",
+    //   id: "connect-four",
+    //   title: "Connect Four",
+    //   description: "A text-based Discord chatbot to run the Chinese game Mahjong.",
     //   tags: [
-    //     "complete",
-    //     "cad_design"
+    //     "ongoing"
     //   ],
     //   thumbnail: ""
-    // }
+    // },
+    // {
+    //   id: "mta-maze",
+    //   title: "MTA Maze",
+    //   description: "A text-based Discord chatbot to run the Chinese game Mahjong.",
+    //   tags: [
+    //     "ongoing"
+    //   ],
+    //   thumbnail: ""
+    // },
   ]
 }
