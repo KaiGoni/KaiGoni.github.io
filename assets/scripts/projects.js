@@ -32,7 +32,7 @@ async function getThumbnailUrl(projectId) {
 
     // Fallback if neither exists
     console.warn(`No thumbnail found for project: ${projectId}`);
-    return `../../assets/images/thumbnails/${projectId}.png`;
+    return `../../assets/images/MissingImage.png`;
 }
 
 async function update() {

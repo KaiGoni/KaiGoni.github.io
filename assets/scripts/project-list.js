@@ -52,7 +52,16 @@ export default {
         "cad_design",
         "environmental"
       ],
-    }
+    },
+    // {
+    //   id: "onshape-train-model",
+    //   title: "OnShape Train Model",
+    //   description: "Students learn how to create use various OnShape tools to create and assemble a 3D train model.",
+    //   tags: [
+    //     "complete",
+    //     "cad_design"
+    //   ],
+    // },
     // {
     //   id: "mahjong-bot",
     //   title: "Mahjong Bot",
@@ -60,16 +69,6 @@ export default {
     //   tags: [
     //     "ongoing"
     //   ],
-    //   thumbnail: ""
-    // },
-    // {
-    //   id: "onshape-train",
-    //   title: "OnShape Train",
-    //   description: "A text-based Discord chatbot to run the Chinese game Mahjong.",
-    //   tags: [
-    //     "ongoing"
-    //   ],
-    //   thumbnail: ""
     // },
     // {
     //   id: "connect-four",
@@ -78,7 +77,6 @@ export default {
     //   tags: [
     //     "ongoing"
     //   ],
-    //   thumbnail: ""
     // },
     // {
     //   id: "mta-maze",
@@ -87,7 +85,6 @@ export default {
     //   tags: [
     //     "ongoing"
     //   ],
-    //   thumbnail: ""
     // },
   ]
 }

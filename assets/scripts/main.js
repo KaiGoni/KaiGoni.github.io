@@ -25,6 +25,7 @@ async function loadHeaderImage() {
     }
 
     console.warn(`No thumbnail found for project: ${projectId}`);
+  headerImage.src = `../../assets/images/MissingImage.png`
 }
 
 // Load header image when page loads
