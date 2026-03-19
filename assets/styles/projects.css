@@ -51,13 +51,16 @@ h3 {
     text-indent: 40px;
 }
 
-.references a {
+.references h3 {
     margin-bottom: 10px;
-    text-indent: 0;
-    text-align: justify;
-    text-justify: inter-word;
-    line-height: 1.5;
+}
+
+.references p {
     font-size: 14px;
+    text-indent: -20px;
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.5;
 }
 
 .date {
