@@ -28,10 +28,13 @@
         <h2>Project Overview</h2>
         <p class="passage">
             According to the New York State Comptroller, in 2024, the New York City Metropolitan Transportation
-            Authority (MTA) had an 82.2% on-time performance1. This caused significant economic and social impacts on
-            the communities who were affected. Data shows that among employed respondants, 74% said that they subway
-            delays caused them to be late for their meetings, and 18% were reprimanded. Furthermore, delays are more
-            frequent on certain lines and affect lower-income neighborhoods stronger.
+            Authority (MTA) had an 82.2% on-time
+            performance<sup><a class="in-text-ref" href="https://www.osc.ny.gov/files/reports/pdf/report-10-2026.pdf">1</a></sup>.
+            This caused significant economic and social impacts on the communities who were affected. Data shows that
+            among employed respondants, 74% said that they subway delays caused them to be late for their meetings, and
+            18% were
+            reprimanded<sup><a class="in-text-ref" href="https://comptroller.nyc.gov/reports/the-human-%20cost-of-subway-delays-a-survey-of-new-york-city-riders/#:~:text=As%20the%20findings,everyday%20New%20Yorkers.">2</a></sup>.
+            Furthermore, delays are more frequent on certain lines and affect lower-income neighborhoods stronger.
         </p>
         <p class="passage">
             While some improvements are underway such as the implementation of Communication Based Train Control (CBTC),
@@ -40,15 +43,10 @@
             system, as well as development of new lines to alleviate congestion and backups caused by the delay or
             failure of a subway line.
         </p>
-        <!--
-            https://www.osc.ny.gov/files/reports/pdf/report-10-2026.pdf
-            https://comptroller.nyc.gov/reports/the-human-%20cost-of-subway-delays-a-survey-of-new-york-city-riders/#:~:text=As%20the%20findings,everyday%20New%20Yorkers.
-            https://mtamaze.onrender.com/
-        -->
         <p class="passage">
-            This is a group project at The Cooper Union's Engineering Design & Problem Solving course consisting of me,
-            Benny Young, Anisa Hossain, Rithik Trehan, and Priva Halpert.
-<!--            Our research report can be accessed <a href="A-Review-of-Reliability-in-New-York-City-Subways.pdf">here</a>.-->
+            This is the Coductorz group project at The Cooper Union's Engineering Design & Problem Solving course
+            consisting of me, Benny Young, Anisa Hossain, Rithik Trehan, and Priva Halpert. Our initial research report
+            can be accessed <a href="A-Review-of-Reliability-in-New-York-City-Subways.pdf">here</a>.
         </p>
     </div>
     <div class="section">
@@ -56,46 +54,122 @@
         <p class="passage">
             The purpose of this project is to create a game that informs players about subway delays in New York City
             and to educate players on how to minimize delays in their commute. The game will use accurate data from the
-            MTA to create delays in the game, and
+            MTA to create delays in the game, which the player will need to navigate around to arrive at their
+            destination in the shortest time possible.
         </p>
-        <div class="body-image">
-            <img src="--------------BODY_IMAGE--------------" alt="--------------IMAGE_ALT--------------">
-            <p>------------------CAPTION--------------------</p>
-        </div>
+        <p class="passage">
+            This project would help players develop strategies in realistic commutting situations to minimize their
+            travel times or choose more reliable routes to minimize delays. The game should also help raise awareness
+            for transit inequality and show how delays disproportionally affect different neighborhoods.
+        </p>
     </div>
     <div class="section">
         <h2 style="text-indent: 0;">Design Criteria</h2>
         <p class="passage">
-            The game should allow the player to start from any subway station in the system, and
+            The game is planned to be made in HTML and JavaScript, and feature an interactive (geographic, by vote of
+            team) subway map where players can click on the map to start from a specific location.
+        </p>
+        <p class="passage">
+            After the player selects a location, the game should allow the player to select a train that the player can
+            ride on, and set their goal to reach Aster Place station (or somewhere close to Cooper Union). The game
+            should consider delays using open access data from the
+            MTA<sup><a class="in-text-ref" href="https://data.ny.gov/Transportation/MTA-Subway-Schedules-2024/ebrw-j62c/about_data">3</a></sup>
+            various situations such as rush hour, weekend schedules, and location of delays.
+        </p>
+        <p class="passage">
+            Animated art will be drawn to allow a more interactive experience. The animations will take place when
+            traveling on a subway, or when the player arrives at the destination. Then, the game should display
+            information on their trip and how efficient their route was.
         </p>
     </div>
     <div class="section">
         <h2>Design & Development Process</h2>
         <p class="passage">
-            ----------------BODY--------------------
+            While Anthony planned the schedule for the project, Anisa drew initial designs for the animations, and Benny
+            started the GitHub repository for the project. Meanwhile, Priva and Rithik did initial research and finding
+            data from NY Open Data.
         </p>
+        <div class="body-image">
+            <img src="github-prototype.png" alt="GitHub Prototype">
+            <p>History of GitHub code</p>
+        </div>
+        <p class="passage">
+            As the game further developed, Anisa continued on working on the animations and Priva created pamphlets for the
+            project. Benny continued on the code, Rithik continued researching for upcoming reports, and Anthony
+            maintained communication between the members to ensure everyone was on the same page, and aided on some
+            programming and design decisions.
+        </p>
+        <p class="passage">
+            Towards the final phase of the project, Anthony and Priva collaborated on the phamlet and the poster, while
+            Benny and Anisa collaborated to incorporate the animations into the code. Rithik maintained communication
+            between the team and later worked on the poster with Priva.
+        </p>
+        <div class="body-image">
+            <img src="poster.png" alt="Project Poster">
+            <p>One of the posters developed to communicate the purpose of the project to the players</p>
+        </div>
     </div>
     <div class="section">
         <h2>Analysis</h2>
         <p class="passage">
-            ----------------BODY--------------------
+            This game is capable of using accurate data from the MTA to create delays in the game, which the player will
+            need to navigate around to arrive at their destination in the shortest time possible. The animation is
+            engaging and occurs when the player performs an action, creating a more complete game feel.
+        </p>
+        <p class="passage">
+            From playtests by the students and faculty of Cooper Union, we were able to also discover that many
+            people did not know the directions of each line. This led to players occasionally taking the train in the
+            incorrect direction, which is a common mistake that commuters make in the real world, which we were happy to
+            be able to simulate in the game.
+        </p>
+        <p class="passage">
+            However, this game can definitely be greatly improved, particularly in the UI design and in edge case
+            situations such as having trains run on nonregular paths (such as the F train running on the crosstown
+            line). The game also may be misleading as it may use outdated information, such as the F/M trains swap.
         </p>
     </div>
     <div class="section">
         <h2>Conclusion</h2>
         <p class="passage">
-            ----------------BODY--------------------
+            Overall, this project acheives the goal of creating an interactive game that informs players about subway
+            delays in New York City. The game uses accurate open source data from the MTA to create delays in the game,
+            which the player will need to navigate around to arrive at their destination in the shortest time possible.
+        </p>
+        <p class="passage">
+            Potential features that can be added is the ability to see delays early, mimicking apps such as the MTA app
+            or the Transit app, which can allow the passenger to make decisions earlier and avoid larger delays. Edge
+            case situations can also be added to create less common but realistic scenarios.
+        </p>
+        <p class="passage">
+            The project portfolio can be found <a href="Coductorz-ProjectPortfolio.pdf/">here</a>.
+            This game can be played <a href="https://mtamaze.onrender.com/">here</a>.
         </p>
     </div>
     <div class="section references">
         <hr>
         <h2>References</h2>
         <p>
-            --------PAGE--------. “---------REF_NAME----------.”
-            <a href="--------------REF_URL---------------">--------------REF_URL---------------</a>
+            Coductorz. “A Review of Reliability in New York City Subways.”
+            <a href="A-Review-of-Reliability-in-New-York-City-Subways.pdf">A-Review-of-Reliability-in-New-York-City-Subways.pdf</a>
+        </p>
+        <p>
+            Coductorz. “Coductorz Project Portfolio.”
+            <a href="A-Review-of-Reliability-in-New-York-City-Subways.pdf">A-Review-of-Reliability-in-New-York-City-Subways.pdf</a>
+        </p>
+        <p>
+            DiNapoli, T. P. “Trends in New York City Subway Delays.” Accessed 3-19-2026
+            <a href="https://www.osc.ny.gov/files/reports/pdf/report-10-2026.pdf">https://www.osc.ny.gov/files/reports/pdf/report-10-2026.pdf</a>
+        </p>
+        <p>
+            Stringer, S. M. “The Human Cost of Subway Delays: A Survey of New York City Riders.” Accessed 3-19-2026
+            <a href="https://comptroller.nyc.gov/reports/the-human-%20cost-of-subway-delays-a-survey-of-new-york-city-riders/#:~:text=As%20the%20findings,everyday%20New%20Yorkers.">https://comptroller.nyc.gov/reports/the-human-%20cost-of-subway-delays-a-survey-of-new-york-city-riders/#:~:text=As%20the%20findings,everyday%20New%20Yorkers.</a>
+        </p>
+        <p>
+            NY Open Data. “MTA Subway Schedules: 2024.” Accessed 3-19-2026
+            <a href="https://data.ny.gov/Transportation/MTA-Subway-Schedules-2024/ebrw-j62c/about_data">https://data.ny.gov/Transportation/MTA-Subway-Schedules-2024/ebrw-j62c/about_data</a>
         </p>
     </div>
 </div>
-<p class="date">1-xx-2026 (Project completed 2025-Q4)</p>
+<p class="date">3-19-2026 (Project completed 2025-Q4)</p>
 </body>
 </html>
