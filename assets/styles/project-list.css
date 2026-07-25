@@ -13,9 +13,9 @@ div.divider {
 }
 
 .content {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    margin: 8px;
 }
 
 #project-list {

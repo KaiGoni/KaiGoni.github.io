@@ -6,22 +6,28 @@
   margin: 0 20px;
 }
 
-.content {
-  display: flex;
-  align-items: center;
-}
-
-.bio {
-  margin: 20px 20px;
-  font-size: 24px;
-  padding: 20px;
-  background-color: powderblue;
-  border-radius: 20px;
+body {
+  margin: 0;
+  overflow-x: hidden
 }
 
 .header {
   font-size: 60px;
   margin: 10px;
+  text-align: center;
+}
+
+.subheader {
+  font-size: 30px;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.time {
+  font-size: 20px;
+  margin: 0;
+  padding-top: 10px;
   text-align: center;
 }
 
@@ -46,7 +52,7 @@
     width: 90%;
     height: auto;
   }
-  
+
   .header {
     font-size: 36px;
   }
@@ -54,4 +60,199 @@
   .bio {
     font-size: 18px;
   }
+}
+
+.bio {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.about {
+  margin: 20px 20px;
+  font-size: 24px;
+  padding: 20px;
+  background-color: #ddeeff;
+  border-radius: 20px;
+}
+
+/*Timeline*/
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.transition-left, .transition-right {
+  position: relative;
+  width: 100%;
+  height: 70px;
+}
+
+.transition-leftBar, .transition-rightBar {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background-color: gold;
+}
+
+.transition-leftBar {
+  left: 20px;
+}
+
+.transition-rightBar {
+  right: 20px;
+}
+
+.transition-left .transition-leftBar {
+  top: 40px;
+}
+
+.transition-right .transition-rightBar {
+  top: 40px;
+}
+
+.transition-centerBar {
+  position: absolute;
+  width: calc(100% - 40px);
+  height: 10px;
+  background-color: gold;
+  top: 30px;
+  left: 20px;
+}
+
+.transition-left .transition-centerBar {
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.transition-right .transition-centerBar {
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.right, .left {
+  position: relative;
+  width: 100%;
+}
+
+.right {
+  padding-left: 40px;
+}
+
+.left {
+  padding-right: 40px;
+}
+
+.content {
+  background-color: #eeffdd;
+  /*background-color: #fff9f0;*/
+  border-block-color: black;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.title {
+  padding: 10px;
+  font-size: 36px;
+  text-align: center;
+  /*background-color: orange;*/
+  background-color: #bbffcc;
+  /*background-color: #eeffdd;*/
+  border-bottom: 1px solid black;
+}
+
+.right .content {
+  margin-left: 30px;
+  padding-left: 50px;
+}
+
+.left .content {
+  margin-right: 30px;
+  padding-right: 50px;
+}
+
+.right::before, .left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background-color: gold;
+}
+
+.content-right {
+  border-left: 2px solid black;
+  border-top: 1px dashed black;
+}
+
+.content-left {
+  border-right: 2px solid black;
+  border-top: 1px dashed black;
+}
+
+.content-topright {
+  border-top-left-radius: 8px;
+  border-top: 2px solid black;
+}
+
+.content-bottomright {
+  border-bottom-left-radius: 8px;
+  border-bottom: 2px solid black;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.content-topleft {
+  border-top-right-radius: 8px;
+  border-top: 2px solid black;
+}
+
+.content-bottomleft {
+  border-bottom-right-radius: 8px;
+  border-bottom: 2px solid black;
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 100%;
+  top: 0px;
+}
+
+.content-text {
+  display: block;
+}
+
+.position {
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  /*background-color: white;*/
+  background-color: #aaddcc;
+  border-top: 1px solid black;
+}
+
+.footer-text {
+  padding: 8px;
+  margin: 0;
+}
+
+.cooper-union::before {
+  /*background-color: goldenrod;*/
+  background-color: black;
+  left: 90px;
+}
+
+.bayside-high-school::before {
+  background-color: darkblue;
+  left: 90px;
 }

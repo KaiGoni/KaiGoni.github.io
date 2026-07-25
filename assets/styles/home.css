@@ -9,7 +9,7 @@ nav {
 }
 
 .title-image {
-    background: linear-gradient(to bottom, transparent, transparent, #E1F3FD), url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/MTA_LIRR_train_leaving_Woodside.jpg/1200px-MTA_LIRR_train_leaving_Woodside.jpg") center;
+    background: linear-gradient(to bottom, transparent, transparent, #E1F3FD), url("../images/Woodside_LIRR_station_busy.jpg") center;
     background-size: cover;
 
     /* Fix Position & Size */
@@ -20,7 +20,6 @@ nav {
     left: 0;
     margin: 0;
     padding: 0;
-    position: absolute;
     z-index: -1;
 }
 
